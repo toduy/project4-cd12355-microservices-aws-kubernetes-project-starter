@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: <NAME OF THE ConfigMap>
+  name: AnalyticsConfigMap
 data:
-  DB_NAME: <ENTER YOUR DB NAME HERE>
-  DB_USER: <ENTER YOUR USER NAME HERE>
+  DB_NAME: dtq-project4
+  DB_USER: postgres
   DB_HOST: <ENTER YOUR DB HOST HERE>
   DB_PORT: <ENTER YOUR DB PORT HERE>
 ---
