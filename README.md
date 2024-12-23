@@ -10,9 +10,9 @@ Before deploying PostgreSQL, update the environment variables for the database c
 ## 2.2 Deploy PostgreSQL Database
 Run the following commands to deploy the PostgreSQL database:
 ```
-kubectl apply -f pvc.yaml          # Apply PersistentVolumeClaim
-kubectl apply -f pv.yaml           # Apply PersistentVolume
-kubectl apply -f postgresql-deployment.yaml  # Apply PostgreSQL Deployment
+kubectl apply -f deployments/pvc.yaml
+kubectl apply -f deployments/pv.yaml
+kubectl apply -f deployments/postgresql-deployment.yaml
 ```
 
 ## 2.3 Deploy PostgreSQL Service
@@ -26,15 +26,15 @@ Follow the AWS guidelines to set up your AWS CodeBuild pipeline. This process wi
 # 4. Deploy Coworking Application
 ## 4.1 Update Configuration
 Before deployment, ensure the following configuration files are updated:
-- Update deployment/configmap.yaml with necessary configuration settings.
-- Update deployment/configmap-secret.yaml to handle secret configurations.
-- Update the image value in deployment/coworking.yaml to point to the correct container image.
+- Update deployments/configmap.yaml with necessary configuration settings.
+- Update deployments/configmap-secret.yaml to handle secret configurations.
+- Update the image value in deployments/coworking.yaml to point to the correct container image.
 ## 4.2 Deploy Coworking Application
 Run these commands to deploy the coworking application:
 ```
-kubectl apply -f deployment/configmap.yaml
-kubectl apply -f deployment/configmap-secret.yaml
-kubectl apply -f deployment/coworking.yaml
+kubectl apply -f deployments/configmap.yaml
+kubectl apply -f deployments/configmap-secret.yaml
+kubectl apply -f deployments/coworking.yaml
 ```
 
 # 5. Verify Deployment
